@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<div class="cards-grid">
+  {{ content }}
+
+  <section class="card">
+    <h2>
+      <span class="lang-zh">文章列表</span>
+      <span class="lang-en">Articles</span>
+    </h2>
+
+    {% assign selected_posts = "" | split: "" %}
+    {% if page.featured_posts and page.featured_posts.size > 0 %}
+      {% for post_path in page.featured_posts %}
+        {% assign wanted_path = post_path | replace: '.markdown', '' | replace: '.md', '' %}
+        {% assign matched_post = nil %}
+        {% for candidate in site.posts %}
+          {% assign candidate_path = candidate.path | replace: '.markdown', '' | replace: '.md', '' %}
+          {% if candidate_path == wanted_path %}
+            {% assign matched_post = candidate %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if matched_post %}
+          {% assign selected_posts = selected_posts | push: matched_post %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if selected_posts.size > 0 %}
+      {% assign posts_to_show = selected_posts %}
+    {% else %}
+      {% assign posts_to_show = site.posts %}
+    {% endif %}
+
+    {% if posts_to_show.size > 0 %}
+      <ul class="post-list">
+        {% for post in posts_to_show %}
+          <li>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <div class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>
+        <span class="lang-zh">还没有文章，先在 <code>_posts</code> 目录里新建 Markdown 文件吧。</span>
+        <span class="lang-en">No posts yet. Add a Markdown file under <code>_posts</code> first.</span>
+      </p>
+    {% endif %}
+  </section>
+</div>

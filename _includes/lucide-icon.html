@@ -1,0 +1,25 @@
+{% assign icon_name = include.name %}
+{% if icon_name == nil or icon_name == "" %}
+  {% case include.type %}
+    {% when "location" %}{% assign icon_name = "map-pin" %}
+    {% when "school" %}{% assign icon_name = "graduation-cap" %}
+    {% when "major" %}{% assign icon_name = "book-open" %}
+    {% when "company" %}{% assign icon_name = "briefcase" %}
+    {% when "github" %}{% assign icon_name = "github" %}
+    {% when "email" %}{% assign icon_name = "mail" %}
+    {% else %}{% assign icon_name = "circle" %}
+  {% endcase %}
+{% endif %}
+
+{% assign allowed_icons = "map-pin,graduation-cap,book-open,briefcase,building-2,github,mail,circle" | split: "," %}
+{% unless allowed_icons contains icon_name %}
+  {% assign icon_name = "circle" %}
+{% endunless %}
+
+<img
+  class="fact-icon-img"
+  src="{{ '/assets/icons/lucide/' | append: icon_name | append: '.svg' | relative_url }}"
+  alt=""
+  loading="lazy"
+  decoding="async"
+>

@@ -1,0 +1,94 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Abalone|Chen Guanyu
+email: abaloneovo@gmail.com
+description: >-
+  个人主页与技术博客，记录经历、项目和文章。
+baseurl: ""
+url: "https://gybaoyu.github.io"
+github_username: gybaoyu
+lang: zh-CN
+# 放置到 assets/images/ 后填写，例如 "/assets/images/favicon.ico"
+favicon: "/assets/images/favicon.ico"
+
+profile:
+  name: Abalone
+  name_en: Abalone
+  # 放置到 assets/images/ 后填写，例如 "/assets/images/avatar.jpg"
+  avatar: "/assets/images/avatar.jpg"
+  quick_facts:
+    - type: location
+      icon: map-pin
+      label_zh: 广东深圳
+      label_en: Shenzhen, Guangdong, China      
+    - type: school
+      icon: graduation-cap
+      label_zh: 深圳大学
+      label_en: Shenzhen University
+    - type: major
+      icon: book-open
+      label_zh: 信息与计算科学
+      label_en: Information and Computational Science
+    - type: company
+      icon: briefcase
+      label_zh: 拓零创新
+      label_en: Turinno
+      url: "https://theturinno.com"
+    - type: github
+      icon: github
+      label_zh: "@gybaoyu"
+      label_en: "@gybaoyu"
+      url: "https://github.com/gybaoyu"
+    - type: email
+      icon: mail
+      label_zh: abaloneovo@gmail.com
+      label_en: abaloneovo@gmail.com
+      url: "mailto:abaloneovo@gmail.com"
+
+# Build settings
+theme: minima
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

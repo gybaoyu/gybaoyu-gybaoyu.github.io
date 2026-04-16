@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}" data-theme="light" data-lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+    </title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
+    {% if site.favicon and site.favicon != "" %}
+      <link rel="icon" href="{{ site.favicon | relative_url }}">
+      <link rel="shortcut icon" href="{{ site.favicon | relative_url }}">
+      <link rel="apple-touch-icon" href="{{ site.favicon | relative_url }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+    {% if page.layout == "post" or page.layout == "page" %}
+      <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        };
+      </script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    {% endif %}
+    <script defer src="{{ '/assets/js/site-controls.js' | relative_url }}"></script>
+  </head>
+  <body class="layout-{{ page.layout | default: 'default' }}{% if page.url == '/' %} is-home{% endif %}{% if page.collection == 'posts' %} is-post{% endif %}">
+    <div class="site-shell">
+      <aside class="site-sidebar">
+        {% if site.profile.avatar and site.profile.avatar != "" %}
+          <img class="avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }}">
+        {% else %}
+          <div class="avatar avatar-fallback">{{ site.profile.name | slice: 0, 1 }}</div>
+        {% endif %}
+
+        <div class="profile-block">
+          <h1 class="profile-name">
+            <span class="lang-zh">{{ site.profile.name | default: site.title }}</span>
+            <span class="lang-en">{{ site.profile.name_en | default: site.profile.name | default: site.title }}</span>
+          </h1>
+
+          {% if site.profile.quick_facts %}
+            <ul class="profile-facts">
+              {% for fact in site.profile.quick_facts %}
+                <li class="profile-fact-item">
+                  <span class="fact-icon" aria-hidden="true">
+                    {% include lucide-icon.html type=fact.type name=fact.icon %}
+                  </span>
+                  <span class="fact-text">
+                    <span class="lang-zh">
+                      {% if fact.url %}
+                        <a href="{{ fact.url }}" target="_blank" rel="noopener noreferrer">{{ fact.label_zh }}</a>
+                      {% else %}
+                        <span>{{ fact.label_zh }}</span>
+                      {% endif %}
+                    </span>
+                    <span class="lang-en">
+                      {% if fact.url %}
+                        <a href="{{ fact.url }}" target="_blank" rel="noopener noreferrer">{{ fact.label_en }}</a>
+                      {% else %}
+                        <span>{{ fact.label_en }}</span>
+                      {% endif %}
+                    </span>
+                  </span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+
+        <div class="controls-group">
+          <button id="theme-toggle" class="control-btn" type="button" aria-label="切换主题">
+            <img class="control-btn-icon" src="{{ '/assets/icons/lucide/sun-moon.svg' | relative_url }}" alt="" aria-hidden="true">
+            <span class="theme-toggle-text">深色 / Dark</span>
+          </button>
+          <button id="lang-toggle" class="control-btn" type="button" aria-label="切换语言">
+            <img class="control-btn-icon" src="{{ '/assets/icons/lucide/languages.svg' | relative_url }}" alt="" aria-hidden="true">
+            <span class="lang-toggle-text">EN</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="site-main" aria-label="页面内容">
+        {{ content }}
+      </main>
+    </div>
+  </body>
+</html>
