@@ -24,7 +24,7 @@
   var savedTheme = localStorage.getItem("theme");
   var savedLang = localStorage.getItem("lang");
   var defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  var defaultLang = navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
+  var defaultLang = "en";
 
   setTheme(savedTheme || defaultTheme);
   setLanguage(savedLang || defaultLang);
