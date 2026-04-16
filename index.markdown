@@ -66,7 +66,7 @@ title: Home
     <span class="tech-tag tech-tag-slate">NCS</span>
     <span class="tech-tag tech-tag-blue">ESP32</span>
   </div>
-  <h2><span class="lang-zh">GitHub Commit</span><span class="lang-en">GitHub Commits</span></h2>
+  <h2><span class="lang-zh">GitHub Commits</span><span class="lang-en">GitHub Commits</span></h2>
   <img
     src="https://ghchart.rshah.org/{{ site.github_username }}"
     alt="GitHub contribution chart"
