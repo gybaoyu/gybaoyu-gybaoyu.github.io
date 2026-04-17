@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Abalone|Chen Guanyu
+title: Abalone
 email: abaloneovo@gmail.com
 description: >-
   个人主页与技术博客，记录经历、项目和文章。
