@@ -22,8 +22,8 @@ title: Home
         <span class="lang-en"><strong>Undergraduate:</strong> Information and Computational Science, Department of Mathematics, Shenzhen University.</span>
       </li>
       <li>
-        <span class="lang-zh"><strong>正在创业：</strong>在<a href="https://theturinno.com" target="_blank" rel="noopener noreferrer">拓零创新</a>，担任 <strong>联合创始人&软件方向副主管</strong>。</span>
-        <span class="lang-en"><strong>Startup: </strong>As the <strong>Co-founder & Deputy Head of Software Engineering</strong> at <a href="https://theturinno.com" target="_blank" rel="noopener noreferrer">Turinno</a></span>
+        <span class="lang-zh"><strong>正在创业：</strong>在<a href="https://turinno.co" target="_blank" rel="noopener noreferrer">拓零创新</a>，担任 <strong>联合创始人&软件方向副主管</strong>。</span>
+        <span class="lang-en"><strong>Startup: </strong>As the <strong>Co-founder & Deputy Head of Software Engineering</strong> at <a href="https://turinno.co" target="_blank" rel="noopener noreferrer">Turinno</a></span>
       </li>
       <li>
         <span class="lang-zh"><strong>当前方向：</strong>主要在做软件外包相关项目，以及键盘嵌入式软件方向开发。</span>
@@ -80,7 +80,7 @@ title: Home
     <article class="project-item">
       <h3>
       (Turinno)
-      <a href="https://theturinno.com/product/EchoBoard" target="_blank" rel="noopener noreferrer">EchoBoard
+      <a href="https://turinno.co/product/EchoBoard" target="_blank" rel="noopener noreferrer">EchoBoard
       </a>
       </h3>
       <p>
