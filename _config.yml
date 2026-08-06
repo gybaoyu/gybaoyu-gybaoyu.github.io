@@ -51,7 +51,7 @@ profile:
       icon: briefcase
       label_zh: 拓零创新
       label_en: Turinno
-      url: "https://theturinno.com"
+      url: "https://turinno.co"
     - type: github
       icon: github
       label_zh: "@gybaoyu"
